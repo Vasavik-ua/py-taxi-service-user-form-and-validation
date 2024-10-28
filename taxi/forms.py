@@ -7,7 +7,9 @@ from taxi.models import Driver, Car
 class DriverCreationForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = Driver
-        fields = UserCreationForm.Meta.fields + ("first_name", "last_name", "license_number",)
+        fields = UserCreationForm.Meta.fields + (
+            "first_name", "last_name", "license_number",
+        )
 
 
 class DriverDeleteForm(forms.ModelForm):
@@ -19,7 +21,9 @@ class DriverDeleteForm(forms.ModelForm):
 class DriverLicenseUpdateForm(forms.ModelForm):
     class Meta:
         model = Driver
-        fields = ["username", "first_name", "last_name", "license_number",]
+        fields = [
+            "username", "first_name", "last_name", "license_number",
+        ]
 
 
 class CarsCreatedForm(forms.ModelForm):

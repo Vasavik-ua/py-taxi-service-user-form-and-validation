@@ -6,10 +6,10 @@ from django.urls import reverse
 
 def clean_license_number(license_number):
     if (
-            len(license_number) == 8 and
-            license_number[:3].isalpha() and
-            license_number[:3].isupper() and
-            license_number[-5:].isdigit()
+        len(license_number) == 8
+        and license_number[:3].isalpha()
+        and license_number[:3].isupper()
+        and license_number[-5:].isdigit()
     ):
         return license_number
     raise ValidationError(
@@ -30,7 +30,11 @@ class Manufacturer(models.Model):
 
 
 class Driver(AbstractUser):
-    license_number = models.CharField(max_length=255, unique=True, validators=[clean_license_number])
+    license_number = models.CharField(
+        max_length=255,
+        unique=True,
+        validators=[clean_license_number]
+    )
 
     class Meta:
         verbose_name = "driver"
