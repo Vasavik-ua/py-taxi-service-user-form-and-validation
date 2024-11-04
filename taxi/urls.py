@@ -47,7 +47,7 @@ urlpatterns = [
     path("cars/create/", CarCreateView.as_view(), name="car-create"),
     path("cars/<int:pk>/update/", CarUpdateView.as_view(), name="car-update"),
     path("cars/<int:pk>/delete/", CarDeleteView.as_view(), name="car-delete"),
-    path("cars/<int:pk>/driver_update/", car_driver_add, name="driver_update"),
+    path("cars/<int:pk>/driver_update/", car_driver_add, name="driver-update"),
     path("cars/<int:pk>/driver_delete/", car_driver_delete,
          name="driver_delete"),
     path("drivers/", DriverListView.as_view(), name="driver-list"),
@@ -55,8 +55,8 @@ urlpatterns = [
     path("drivers/<int:pk>/delete/", DriverDeleteView.as_view(),
          name="driver-delete"),
     path(
-        "drivers/<int:pk>/licence_update/",
-        DriverLicenseUpdateView.as_view(), name="driver-licence-update"
+        "drivers/<int:pk>/license_update/",
+        DriverLicenseUpdateView.as_view(), name="driver-update"
     ),
     path(
         "drivers/<int:pk>/", DriverDetailView.as_view(), name="driver-detail"

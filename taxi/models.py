@@ -14,7 +14,7 @@ def clean_license_number(license_number):
         return license_number
     raise ValidationError(
         "Driver's license must consist of 3 uppercase "
-        "letters followed by 5 digits."
+        "letters followed by 5 digits and total 8 characters."
     )
 
 

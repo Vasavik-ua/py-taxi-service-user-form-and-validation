@@ -22,11 +22,11 @@ class DriverLicenseUpdateForm(forms.ModelForm):
     class Meta:
         model = Driver
         fields = [
-            "username", "first_name", "last_name", "license_number",
+            "license_number",
         ]
 
 
-class CarsCreatedForm(forms.ModelForm):
+class CarCreationForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = "__all__"

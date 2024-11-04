@@ -12,7 +12,7 @@
         <button type="submit" class="btn btn-danger">Delete me from this car</button>
       </form>
     {% else %}
-      <form style="float: right" action="{% url "taxi:driver_update" pk=car.id %}" method="post">
+      <form style="float: right" action="{% url "taxi:driver-update" pk=car.id %}" method="post">
         {% csrf_token %}
         {{ form|crispy }}
         <button type="submit" class="btn btn-primary">Assign me to this car</button>
